@@ -1,8 +1,12 @@
 import {
+  decodeToken,
+  generateToken,
+} from "../../../services/JWT/jwt.service.js";
+import {
   failedResponse,
   successResponse,
 } from "../../../utils/responses/response.js";
-import { userModel } from "./user.model.js";
+import { authenticateUser, userModel } from "./user.model.js";
 
 export const userSignupController = async (req, res) => {
   try {
@@ -27,4 +31,17 @@ export const userSignupController = async (req, res) => {
       .status(500)
       .send(failedResponse(500, "Unable to create user at this moment"));
   }
+};
+export const userSigninController = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    const user = await authenticateUser(email, password);
+    console.log("user", user.data);
+    if (!user.data) {
+      return res.send(failedResponse(403, "Login failed"));
+    }
+    const userToken = generateToken({ userId: user._id });
+    res.status(201).send(successResponse(userToken, "Login Successfull"));
+  } catch (error) {}
 };

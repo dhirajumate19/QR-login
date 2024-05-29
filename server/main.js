@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express from "express";
 import { App_Port } from "./config.js";
 import userRoutes from "./src/account/user/user.routes.js";
