@@ -41,7 +41,9 @@ export const userSigninController = async (req, res) => {
     if (!user.data) {
       return res.send(failedResponse(403, "Login failed"));
     }
-    const userToken = generateToken({ userId: user._id });
+    console.log("user Id", user.data);
+    const userToken = await generateToken({ userId: user.data.userId });
+
     res.status(201).send(successResponse(userToken, "Login Successfull"));
   } catch (error) {}
 };

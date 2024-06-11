@@ -1,0 +1,64 @@
+.conatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header {
+  display: flex;
+  width: 100%;
+  height: 190px;
+  z-index: 1;
+  margin-right: 10px;
+  align-items: center;
+  background-color: #00a884;
+}
+.logo {
+  height: 40px;
+  width: 40px;
+}
+.downloadsection {
+  display: flex;
+  margin-left: 10px;
+  align-items: center;
+  padding: 10px;
+  align-content: space-between;
+  border: 1px solid black;
+}
+.downloadButton {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  justify-content: right;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.conatiner-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  /* box-shadow: 0 6px 8px rgb(0, 0, 0, 0.5); */
+  box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+  width: 50%;
+}
+.instructionqr-content {
+  display: flex;
+}
+.instruction {
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+.qrcode {
+  border: 1px solid #ddd;
+  padding: 10px;
+  display: inline-block;
+}
+.qrimage {
+  height: 200px;
+  width: 20px;
+}
